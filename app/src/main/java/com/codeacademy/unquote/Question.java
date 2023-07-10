@@ -1,14 +1,5 @@
 package com.codeacademy.unquote;
 
-
-
-
-
-
-
-
-
-//My code from Codecademy:
 public class Question {
     int imageId;
     String questionText;
@@ -37,6 +28,7 @@ public class Question {
     }
 
     boolean isCorrect() {
-        return correctAnswer == playerAnswer;
+        return playerAnswer == correctAnswer;
     }
+
 }
