@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO 2-G: Show app icon in ActionBar
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.ic_unquote_icon);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
@@ -82,12 +81,58 @@ public class MainActivity extends AppCompatActivity {
         questions = new ArrayList<>();
 
         // TODO 2-H: Provide actual drawables for each of these questions!
-        Question question0 = new Question(0, "This is a test question!", "Test Answer 0", "Test Answer 1", "Test Answer 2", "Test Answer 3", 2);
-        Question question1 = new Question(0, "This is a test question!", "Test Answer 0", "Test Answer 1", "Test Answer 2", "Test Answer 3", 2);
-        Question question2 = new Question(0, "This is a test question!", "Test Answer 0", "Test Answer 1", "Test Answer 2", "Test Answer 3", 2);
-        Question question3 = new Question(0, "This is a test question!", "Test Answer 0", "Test Answer 1", "Test Answer 2", "Test Answer 3", 2);
-        Question question4 = new Question(0, "This is a test question!", "Test Answer 0", "Test Answer 1", "Test Answer 2", "Test Answer 3", 2);
-        Question question5 = new Question(0, "This is a test question!", "Test Answer 0", "Test Answer 1", "Test Answer 2", "Test Answer 3", 2);
+        Question question0 = new Question(R.drawable.img_quote_0,
+                "Pretty good advice, and perhaps a scientist did say it…\n" +
+                        "Who actually did?",
+                "Albert Einstein",
+                "Isaac Newton",
+                "Rita Mae Brown",
+                "Rosalind Franklin",
+                2);
+
+        Question question1 = new Question(R.drawable.img_quote_1,
+                "Was honest Abe honestly quoted?\n" +
+                        "Who authored this pithy bit of wisdom?",
+                "Edward Stieglitz",
+                "Maya Angelou",
+                "Abraham Lincoln",
+                "Ralph Waldo Emerson",
+                0);
+
+        Question question2 = new Question(R.drawable.img_quote_2,
+                "Easy advice to read, difficult advice to follow — " +
+                        "who actually said it?",
+                "Martin Luther King Jr.",
+                "Mother Teresa",
+                "Fred Rogers",
+                "Oprah Winfrey",
+                1);
+
+        Question question3 = new Question(R.drawable.img_quote_3,
+                "Insanely inspiring, insanely incorrect (maybe).\n" +
+                        "Who is the true source of this inspiration?",
+                "Nelson Mandela",
+                "Harriet Tubman",
+                "Mahatma Gandhi",
+                "Nicholas Klein",
+                3);
+
+        Question question4 = new Question(R.drawable.img_quote_4,
+                "A peace worth striving for — who actually reminded us of this?",
+                "Malala Yousafzai",
+                "Martin Luther King Jr.",
+                "Liu Xiaobo",
+                "Dalai Lama",
+                1);
+
+        Question question5 = new Question(R.drawable.img_quote_5,
+                "Unfortunately, true —\n" +
+                        "but did Marilyn Monroe convey it or did someone else?",
+                "Laurel Thatcher Ulrich",
+                "Eleanor Roosevelt",
+                "Marilyn Monroe",
+                "Queen Victoria",
+                0);
 
         questions.add(question0);
         questions.add(question1);
