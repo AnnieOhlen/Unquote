@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         if (totalCorrect == totalQuestions) {
             return "You got all " + totalQuestions + " right! You won!";
         } else {
-            return "You got " + totalCorrect + " right out of " + totalQuestions + 
+            return "You got " + totalCorrect + " right out of " + totalQuestions +
                     ". Better luck next time!";
         }
     }
