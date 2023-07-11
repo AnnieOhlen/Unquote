@@ -16,8 +16,14 @@ public class MainActivity extends AppCompatActivity {
     int totalCorrect;
     int totalQuestions;
     ArrayList<Question> questions;
-
-    // TODO 3-A: Declare View member variables
+    ImageView questionImageView;
+    TextView questionTextView;
+    TextView questionsRemainingTextView;
+    Button answer0Button;
+    Button answer1Button;
+    Button answer2Button;
+    Button answer3Button;
+    Button submitButton;
 
 
     @Override
@@ -31,7 +37,14 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        // TODO 3-B: assign View member variables
+        questionImageView = findViewById(R.id.iv_main_question_image);
+        questionTextView = findViewById(R.id.tv_main_question_title);
+        questionsRemainingTextView = findViewById(R.id.tv_main_questions_remaining_count);
+        answer0Button = findViewById(R.id.btn_main_answer_0);
+        answer1Button = findViewById(R.id.btn_main_answer_1);
+        answer2Button = findViewById(R.id.btn_main_answer_2);
+        answer3Button = findViewById(R.id.btn_main_answer_3);
+        submitButton = findViewById(R.id.btn_main_submit_answer);
 
         // TODO 4-E: set onClickListener for each answer Button
 
@@ -41,9 +54,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // TODO 3-F: displayQuestion(Question question) {...}
+    void displayQuestion(Question question) {
+        questionImageView.setImageResource(question.imageId);
+        questionTextView.setText(question.questionText);
+        answer0Button.setText(question.answer0);
+        answer1Button.setText(question.answer1);
+        answer2Button.setText(question.answer2);
+        answer3Button.setText(question.answer3);
+    }
 
-    // TODO 3-C: displayQuestionsRemaining(int questionRemaining) {...}
+    void displayQuestionsRemaining(int questionRemaining) {
+        questionsRemainingTextView.setText(String.valueOf(questionRemaining));
+    }
+
 
     // TODO 4-A: onAnswerSelected(int answerSelected) {...}
 
@@ -60,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         questions.remove(current);
 
         // TODO 3-D.i: Uncomment the line below after implementing displayQuestionsRemaining(int)
-        // displayQuestionsRemaining(questions.size);
+        displayQuestionsRemaining(questions.size());
 
         if (questions.size() == 0) {
             String gameOverMessage = getGameOverMessage(totalCorrect, totalQuestions);
@@ -70,8 +93,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             chooseNewQuestion();
 
-            // TODO 3-H.i: uncomment after implementing displayQuestion(Question)
-            // displayQuestion(getCurrentQuestion());
+            displayQuestion(getCurrentQuestion());
         }
 
     }
@@ -80,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
     void startNewGame() {
         questions = new ArrayList<>();
 
-        // TODO 2-H: Provide actual drawables for each of these questions!
         Question question0 = new Question(R.drawable.img_quote_0,
                 "Pretty good advice, and perhaps a scientist did say it…\n" +
                         "Who actually did?",
@@ -144,14 +165,12 @@ public class MainActivity extends AppCompatActivity {
         totalCorrect = 0;
         totalQuestions = questions.size();
 
-
         Question firstQuestion = chooseNewQuestion();
 
         // TODO 3-D.ii: Uncomment the line below after implementing displayQuestionsRemaining(int)
-        // displayQuestionsRemaining(questions.size());
+        displayQuestionsRemaining(questions.size());
 
-        // TODO 3-H.ii: Uncomment after implementing displayQuestion(Question)
-        // displayQuestion(firstQuestion);
+        displayQuestion(firstQuestion);
     }
 
 
@@ -174,11 +193,15 @@ public class MainActivity extends AppCompatActivity {
         return (int) result;
     }
 
+
     String getGameOverMessage(int totalCorrect, int totalQuestions) {
         if (totalCorrect == totalQuestions) {
             return "You got all " + totalQuestions + " right! You won!";
         } else {
-            return "You got " + totalCorrect + " right out of " + totalQuestions + ". Better luck next time!";
+            return "You got " + totalCorrect + " right out of " + totalQuestions + 
+                    ". Better luck next time!";
         }
     }
+
+
 }
