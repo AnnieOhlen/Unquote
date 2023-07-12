@@ -46,8 +46,37 @@ public class MainActivity extends AppCompatActivity {
         answer3Button = findViewById(R.id.btn_main_answer_3);
         submitButton = findViewById(R.id.btn_main_submit_answer);
 
-        // TODO 4-E: set onClickListener for each answer Button
+        answer0Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayQuestion(getCurrentQuestion());
+                onAnswerSelected(0);
+            }
+        });
 
+        answer1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayQuestion(getCurrentQuestion());
+                onAnswerSelected(1);
+            }
+        });
+
+        answer2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayQuestion(getCurrentQuestion());
+                onAnswerSelected(2);
+            }
+        });
+
+        answer3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayQuestion(getCurrentQuestion());
+                onAnswerSelected(3);
+            }
+        });
         // TODO 5-A: set onClickListener for the submit answer Button
 
         startNewGame();
@@ -68,7 +97,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // TODO 4-A: onAnswerSelected(int answerSelected) {...}
+    // TODO 4-A:
+    void onAnswerSelected(int answerSelected) {
+        Question currentQuestion = getCurrentQuestion();
+        currentQuestion.playerAnswer = answerSelected;
+
+        switch (answerSelected) {
+            case 0:
+                answer0Button.setText("✔ " + currentQuestion.answer0);
+                break;
+            case 1:
+                answer1Button.setText("✔ " + currentQuestion.answer1);
+                break;
+            case 2:
+                answer2Button.setText("✔ " + currentQuestion.answer2);
+                break;
+            case 3:
+                answer3Button.setText("✔ " + currentQuestion.answer3);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + answerSelected);
+        }
+    }
 
 
     // TODO #6 add onAnswerSubmission() here
@@ -82,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
         }
         questions.remove(current);
 
-        // TODO 3-D.i: Uncomment the line below after implementing displayQuestionsRemaining(int)
         displayQuestionsRemaining(questions.size());
 
         if (questions.size() == 0) {
@@ -167,7 +216,6 @@ public class MainActivity extends AppCompatActivity {
 
         Question firstQuestion = chooseNewQuestion();
 
-        // TODO 3-D.ii: Uncomment the line below after implementing displayQuestionsRemaining(int)
         displayQuestionsRemaining(questions.size());
 
         displayQuestion(firstQuestion);
