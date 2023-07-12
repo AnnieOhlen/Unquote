@@ -1,5 +1,4 @@
 package com.codeacademy.unquote;
-
 public class Question {
     int imageId;
     String questionText;
@@ -30,5 +29,4 @@ public class Question {
     boolean isCorrect() {
         return playerAnswer == correctAnswer;
     }
-
 }

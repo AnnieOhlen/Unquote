@@ -77,7 +77,13 @@ public class MainActivity extends AppCompatActivity {
                 onAnswerSelected(3);
             }
         });
-        // TODO 5-A: set onClickListener for the submit answer Button
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onAnswerSubmission();
+            }
+        });
 
         startNewGame();
     }
@@ -92,12 +98,12 @@ public class MainActivity extends AppCompatActivity {
         answer3Button.setText(question.answer3);
     }
 
+
     void displayQuestionsRemaining(int questionRemaining) {
         questionsRemainingTextView.setText(String.valueOf(questionRemaining));
     }
 
 
-    // TODO 4-A:
     void onAnswerSelected(int answerSelected) {
         Question currentQuestion = getCurrentQuestion();
         currentQuestion.playerAnswer = answerSelected;
@@ -121,30 +127,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // TODO #6 add onAnswerSubmission() here
-
-
     void onAnswerSubmission() {
         Question current = getCurrentQuestion();
 
-        if (current.isCorrect()) {
+        if (current.playerAnswer == -1) {
+            System.out.println("Error: Submit without playerAnswer.");
+            return;
+        } else if (current.isCorrect()) {
             totalCorrect++;
         }
-        questions.remove(current);
 
+        questions.remove(current);
         displayQuestionsRemaining(questions.size());
 
         if (questions.size() == 0) {
             String gameOverMessage = getGameOverMessage(totalCorrect, totalQuestions);
 
-            // TODO 5-D: Show a popup instead
-            System.out.println(gameOverMessage);
+            AlertDialog.Builder gameOverDialogBuilder = new
+                    AlertDialog.Builder(MainActivity.this);
+            gameOverDialogBuilder.setCancelable(false);
+
+            gameOverDialogBuilder.setTitle(gameOverMessage);
+
+            gameOverDialogBuilder.setPositiveButton("Play Again!",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            startNewGame();
+                        }
+                    });
+
+            gameOverDialogBuilder.create().show();
+
         } else {
             chooseNewQuestion();
-
             displayQuestion(getCurrentQuestion());
         }
-
     }
 
 
@@ -250,6 +268,4 @@ public class MainActivity extends AppCompatActivity {
                     ". Better luck next time!";
         }
     }
-
-
 }
