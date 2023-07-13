@@ -12,17 +12,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:contentDescription="Question-related image."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic"
-        android:contentDescription="Question-related image." />
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
         android:id="@+id/tv_main_questions_remaining_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:text="99"
         android:textSize="48sp"
         android:textStyle="bold"
@@ -45,6 +46,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:minWidth="100dp"
+        android:minHeight="50dp"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="@+id/tv_main_questions_remaining_count"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:minHeight="50dp"
             android:text="answer2" />
 
         <Button
@@ -77,6 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:minHeight="50dp"
             android:text="answer3" />
     </LinearLayout>
 
@@ -99,6 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:minHeight="50dp"
             android:text="answer0" />
 
         <Button
@@ -107,6 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:minHeight="50dp"
             android:text="answer1" />
     </LinearLayout>
 
@@ -115,6 +123,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif"
         android:text="Famous advice from an iconic mentor. Which fictional character really imparted this bit of sage wisdom?"
