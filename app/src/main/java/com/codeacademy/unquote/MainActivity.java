@@ -258,30 +258,31 @@ public class MainActivity extends AppCompatActivity {
                 0);
 
         Question question10 = new Question(R.drawable.img_quote_10,
-                "Here’s the truth, Will Smith did say this, " +
-                        "but in which movie?",
-                "Independence Day",
-                "Bad Boys",
-                "Men In Black",
-                "The Pursuit of Happyness",
-                2);
+                "He’s the king of something alright —\n" +
+                        "to whom does this self-titling line belong to?",
+                "Tony Montana, Scarface",
+                "Joker, The Dark Knight",
+                "Lex Luthor, Batman v Superman",
+                "Jack, Titanic",
+                3);
 
         Question question11 = new Question(R.drawable.img_quote_11,
-                "Here’s the truth, Will Smith did say this, " +
-                        "but in which movie?",
-                "Independence Day",
-                "Bad Boys",
-                "Men In Black",
-                "The Pursuit of Happyness",
-                2);
+                "Is “Grey” synonymous for “wise”? " +
+                        "If so, maybe Gandalf did preach this advice.\n" +
+                        "If not, who did?",
+                "Yoda, Star Wars",
+                "Gandalf The Grey, Lord of the Rings",
+                "Dumbledore, Harry Potter",
+                "Uncle Ben, Spider-Man",
+                0);
 
         Question question12 = new Question(R.drawable.img_quote_12,
-                "Here’s the truth, Will Smith did say this, " +
-                        "but in which movie?",
-                "Independence Day",
-                "Bad Boys",
-                "Men In Black",
-                "The Pursuit of Happyness",
+                "Houston, we have a problem with this quote —\n" +
+                        "which space-traveler does this catch-phrase actually belong to?",
+                "Han Solo, Star Wars",
+                "Captain Kirk, Star Trek",
+                "Buzz Lightyear, Toy Story",
+                "Jim Lovell, Apollo 13",
                 2);
 
         questions.add(question0);
