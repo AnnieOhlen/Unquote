@@ -222,12 +222,81 @@ public class MainActivity extends AppCompatActivity {
                 "Queen Victoria",
                 0);
 
+        Question question6 = new Question(R.drawable.img_quote_6,
+                "Here’s the truth, Will Smith did say this, " +
+                        "but in which movie?",
+                "Independence Day",
+                "Bad Boys",
+                "Men In Black",
+                "The Pursuit of Happyness",
+                2);
+
+        Question question7 = new Question(R.drawable.img_quote_7,
+                "Which TV funny gal actually quipped this 1-liner?",
+                "Ellen Degeneres",
+                "Amy Poehler",
+                "Betty White",
+                "Tina Fay",
+                3);
+
+        Question question8 = new Question(R.drawable.img_quote_8,
+                "This mayor won’t get my vote —\n" +
+                        "but did he actually give this piece of advice?" +
+                        "And if not, who did?",
+                "Forrest Gump, Forrest Gump",
+                "Dorry, Finding Nemo",
+                "Esther Williams",
+                "The Mayor, Jaws",
+                1);
+
+        Question question9 = new Question(R.drawable.img_quote_9,
+                "Her heart will go on, but whose heart is it?",
+                "Whitney Houston",
+                "Diana Ross",
+                "Celine Dion",
+                "Mariah Carey",
+                0);
+
+        Question question10 = new Question(R.drawable.img_quote_10,
+                "Here’s the truth, Will Smith did say this, " +
+                        "but in which movie?",
+                "Independence Day",
+                "Bad Boys",
+                "Men In Black",
+                "The Pursuit of Happyness",
+                2);
+
+        Question question11 = new Question(R.drawable.img_quote_11,
+                "Here’s the truth, Will Smith did say this, " +
+                        "but in which movie?",
+                "Independence Day",
+                "Bad Boys",
+                "Men In Black",
+                "The Pursuit of Happyness",
+                2);
+
+        Question question12 = new Question(R.drawable.img_quote_12,
+                "Here’s the truth, Will Smith did say this, " +
+                        "but in which movie?",
+                "Independence Day",
+                "Bad Boys",
+                "Men In Black",
+                "The Pursuit of Happyness",
+                2);
+
         questions.add(question0);
         questions.add(question1);
         questions.add(question2);
         questions.add(question3);
         questions.add(question4);
         questions.add(question5);
+        questions.add(question6);
+        questions.add(question7);
+        questions.add(question8);
+        questions.add(question9);
+        questions.add(question10);
+        questions.add(question11);
+        questions.add(question12);
 
         totalCorrect = 0;
         totalQuestions = questions.size();
