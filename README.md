@@ -4,7 +4,7 @@ Codecademy project for "Build Basic Android Apps with Java" course:
 https://www.codecademy.com/learn/paths/introduction-to-android-with-java
 
 Working on the final module (number 6): "6. Intermediate Java and Capstone Project".
-Currently on item: [ 6-E ].
+Currently on item: [ COMPLETE ] according to the description by Codecademy.
 
 The end of the project encouraged to keep adding trivia questions and features.
 List of ideas I want to implement, marked with [X] when implemented.

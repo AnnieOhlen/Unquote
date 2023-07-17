@@ -300,6 +300,12 @@ public class MainActivity extends AppCompatActivity {
         questions.add(question12);
 
         totalCorrect = 0;
+
+        while (questions.size() > 6) {
+            int removeIndex = generateRandomNumber(questions.size());
+            questions.remove(removeIndex);
+        }
+
         totalQuestions = questions.size();
 
         Question firstQuestion = chooseNewQuestion();
