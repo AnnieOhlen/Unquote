@@ -1,6 +1,7 @@
 # Unquote
 
 The project is complete according to the description by Codecademy.
+
 Codecademy project for "Build Basic Android Apps with Java" course:
 
 https://www.codecademy.com/learn/paths/introduction-to-android-with-java
