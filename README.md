@@ -1,32 +1,24 @@
 # Unquote
-
-The project is complete according to the description by Codecademy.
-
-Codecademy project for "Build Basic Android Apps with Java" course:
-
+Codecademy project for "Build Basic Android Apps with Java" course:\
 https://www.codecademy.com/learn/paths/introduction-to-android-with-java
-##
 
-The end of the project encouraged to keep adding trivia questions and features.
-My ideas, marked when implemented:
+The project has been completed in accordance to the assignment description by CodeCademy.
 
-<ul>
-    <li>[ ] High score list with the latest attempts or a local save?</li>
-    <li>[ ] Theme switcher within the actionbar? Light and dark toggle button?</li>
-    <li>[ ] Another color for submit-button whilst player has not chosen an answer.</li>
-    <li>[ ] Pick how many questions to run?</li>
-</ul>
+## Beyond
+The end of the project encouraged to keep adding trivia questions and features.\
+I have yet to further expand on the project beyond the tutorial but had a few ideas.
 
-<ul>
-    <li>[ ] Being able to chose a theme for the questions on start-up?</li>
-    <li>[ ] Able to chose one or several themes, if several randomly picks a number of them.</li>
-    <li>[ ] Need another layout for the theme view? New classes as well.</li>
-</ul>
+### Ideas for more functionality:
+* [ ] High score list with the latest attempts or a local save?
+* [ ] Theme switcher within the actionbar? Light and dark toggle button?
+* [ ] Another color for submit-button whilst player has not chosen an answer.
+* [ ] Pick how many questions to run?
+* [ ] Being able to chose a theme for the questions on start-up?
+* [ ] Able to chose one or several themes, if several randomly picks a number of them.
+* [ ] Need another layout for the theme view? New classes as well.
 
-Themes:
-<ul>
-    <li>[ ] Food</li>
-    <li>[ ] Cultural</li>
-    <li>[ ] Movies</li>
-    <li>[ ] Memes</li>
-</ul>
+### Themes:
+* [ ] Food
+* [ ] Cultural
+* [ ] Movies
+* [ ] Memes
