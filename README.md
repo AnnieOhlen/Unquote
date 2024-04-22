@@ -4,6 +4,8 @@ https://www.codecademy.com/learn/paths/introduction-to-android-with-java
 
 The project has been completed in accordance to the assignment description by CodeCademy.
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AnnieOhlen_Unquote&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=AnnieOhlen_Unquote)
+
 ## Beyond
 The end of the project encouraged to keep adding trivia questions and features.\
 I have yet to further expand on the project beyond the tutorial but had a few ideas.
