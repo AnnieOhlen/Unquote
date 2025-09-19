@@ -23,17 +23,17 @@ jobs:
           distribution: oracle
           java-version: 25
 
-      # 1️⃣ Manual Gradle build before CodeQL
-      - name: Build project with Gradle
-        run: ./gradlew assemble
-
-      # 2️⃣ Initialize CodeQL in manual build mode
+      # 1️⃣ Initialize CodeQL in manual build mode
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
           languages: java
           # key setting:
           build: manual
+
+      # 2️⃣ Manual Gradle build before CodeQL
+      - name: Build project with Gradle
+        run: ./gradlew assemble
 
       # 3️⃣ Run CodeQL analysis
       - name: Perform CodeQL Analysis
