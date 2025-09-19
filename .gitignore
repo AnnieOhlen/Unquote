@@ -1,23 +1,21 @@
+# Module files
 *.iml
 .gradle
-/local.properties
+local.properties
 
-# Android Studio
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-/.idea/runConfigurations/
+# Ignore everything in .idea except essential project files
+.idea/*
+!.idea/AndroidProjectSystem.xml
+!.idea/gradle.xml
+!.idea/misc.xml
 
 # OS-specific
 .DS_Store
 Thumbs.db
 
 # Build output
-/build
-/captures
+build
+captures
 .externalNativeBuild
 .cxx
 
