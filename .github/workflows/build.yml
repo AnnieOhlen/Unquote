@@ -11,30 +11,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout your code
+      # 1️⃣ Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Set up Java 25
-      #    Ensures Gradle and CodeQL use the correct JDK
-      - name: Set up JDK 25
+      # 2️⃣ Ensure gradlew is executable
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      # 3️⃣ Set up Oracle JDK 25
+      - name: Set up Oracle JDK 25
         uses: actions/setup-java@v3
         with:
           distribution: oracle
           java-version: 25
 
-      # 3️⃣ Build project manually for CodeQL
-      #    Replaces the autobuild step which fails by default
+      # 4️⃣ Build project manually for CodeQL
+      #    Replaces the failing autobuild step
       - name: Build with Gradle (manual for CodeQL)
         run: ./gradlew assemble
 
-      # 4️⃣ Initialize CodeQL
-      #    Prepares CodeQL for analysis
+      # 5️⃣ Initialize CodeQL
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
           languages: java
 
-      # 5️⃣ Run CodeQL analysis
+      # 6️⃣ Run CodeQL analysis
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
