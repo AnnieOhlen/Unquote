@@ -1,0 +1,40 @@
+name: Android Java 25 CI & SonarCloud + CodeQL
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  codeql:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout your code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Set up Java 25
+      #    Ensures Gradle and CodeQL use the correct JDK
+      - name: Set up JDK 25
+        uses: actions/setup-java@v3
+        with:
+          distribution: oracle
+          java-version: 25
+
+      # 3️⃣ Build project manually for CodeQL
+      #    Replaces the autobuild step which fails by default
+      - name: Build with Gradle (manual for CodeQL)
+        run: ./gradlew assemble
+
+      # 4️⃣ Initialize CodeQL
+      #    Prepares CodeQL for analysis
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: java
+
+      # 5️⃣ Run CodeQL analysis
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
