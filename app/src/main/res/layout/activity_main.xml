@@ -1,30 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/md_theme_light_background"
     tools:context=".MainActivity">
 
+    <!-- Top App Bar with centered logo -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/Widget.Material3.Toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_unquote_icon"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="center" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- Question image -->
     <ImageView
         android:id="@+id/iv_main_question_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:contentDescription="Question-related image."
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <!-- Questions remaining -->
 
     <TextView
         android:id="@+id/tv_main_questions_remaining_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="36dp"
         android:text="99"
+        android:textColor="@color/md_theme_light_onSurfaceVariant"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,101 +61,161 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="questions remaining"
+        android:textColor="@color/md_theme_light_onSurfaceVariant"
         app:layout_constraintBottom_toBottomOf="@+id/tv_main_questions_remaining_count"
         app:layout_constraintStart_toEndOf="@+id/tv_main_questions_remaining_count"
         app:layout_constraintTop_toTopOf="@+id/tv_main_questions_remaining_count" />
 
-    <Button
+    <!-- Submit button -->
+
+    <!-- Answer buttons 2-3 -->
+
+    <!-- Answer buttons 0-1 -->
+
+    <!-- Question text -->
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_main_submit_answer"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:minWidth="100dp"
-        android:minHeight="50dp"
+        android:layout_marginEnd="48dp"
         android:text="Submit"
+        app:backgroundTint="@color/md_theme_light_secondary"
+        app:cornerRadius="12dp"
+        app:iconTint="@color/md_theme_light_onSecondary"
         app:layout_constraintBottom_toBottomOf="@+id/tv_main_questions_remaining_count"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_main_questions_remaining_count" />
+        app:layout_constraintTop_toTopOf="@+id/tv_main_questions_remaining_count"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout_answer_2_3"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_answer_2_3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
+        android:minHeight="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_main_submit_answer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_max="640dp">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_main_answer_2"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:minHeight="50dp"
-            android:text="answer2" />
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="4dp"
+            android:autoSizeMaxTextSize="16sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="answer2"
+            app:backgroundTint="@color/md_theme_light_primary"
+            app:cornerRadius="8dp"
+            app:iconTint="@color/md_theme_light_onPrimary"
+            app:layout_constraintHeight_default="spread"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_main_answer_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_main_answer_3"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:minHeight="50dp"
-            android:text="answer3" />
-    </LinearLayout>
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:autoSizeMaxTextSize="16sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="answer3"
+            app:backgroundTint="@color/md_theme_light_primary"
+            app:cornerRadius="8dp"
+            app:iconTint="@color/md_theme_light_onPrimary"
+            app:layout_constraintHeight_default="spread"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_main_answer_2"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout_answer_0_1"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_answer_0_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout_answer_2_3"
+        android:minHeight="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_answer_2_3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_max="640dp">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_main_answer_0"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:minHeight="50dp"
-            android:text="answer0" />
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="4dp"
+            android:autoSizeMaxTextSize="16sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="answer0"
+            app:backgroundTint="@color/md_theme_light_primary"
+            app:cornerRadius="8dp"
+            app:iconTint="@color/md_theme_light_onPrimary"
+            app:layout_constraintHeight_default="spread"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_main_answer_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_main_answer_1"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:minHeight="50dp"
-            android:text="answer1" />
-    </LinearLayout>
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:autoSizeMaxTextSize="16sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="answer1"
+            app:backgroundTint="@color/md_theme_light_primary"
+            app:cornerRadius="8dp"
+            app:iconTint="@color/md_theme_light_onPrimary"
+            app:layout_constraintHeight_default="spread"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_main_answer_0"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tv_main_question_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif"
         android:text="Famous advice from an iconic mentor. Which fictional character really imparted this bit of sage wisdom?"
+        android:textColor="@color/md_theme_light_onBackground"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout_answer_0_1"
+        app:layout_constraintBottom_toTopOf="@+id/layout_answer_0_1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_max="640dp" />
 

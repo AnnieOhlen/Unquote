@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+<!-- Base colors -->
+<color name="md_theme_light_background">#C4B2A6</color>
+<color name="md_theme_light_surface">#EFD9CA</color>
 
-    <color name="colorPrimary">#EFD9CA</color>
-    <color name="colorPrimaryDark">#C4B2A6</color>
-    <color name="colorAccent">#FD4D3F</color>
+<!-- Primary / Secondary -->
+<color name="md_theme_light_primary">#D97E6E</color>       <!-- Warm muted red -->
+<color name="md_theme_light_onPrimary">#FFFFFF</color>
+<color name="md_theme_light_secondary">#7AAFA3</color>     <!-- Muted teal -->
+<color name="md_theme_light_onSecondary">#FFFFFF</color>
+
+<!-- Error -->
+<color name="md_theme_light_error">#B00020</color>
+<color name="md_theme_light_onError">#FFFFFF</color>
+
+<!-- Text / icons -->
+<color name="md_theme_light_onBackground">#333333</color>   <!-- Primary text, softer than black -->
+<color name="md_theme_light_onSurface">#333333</color>      <!-- Surface text -->
+<color name="md_theme_light_onSurfaceVariant">#4F4F4F</color> <!-- Secondary text / counters / hints -->
+<color name="md_theme_light_outline">#616161</color>        <!-- Tertiary text / subtle borders -->
+
 </resources>

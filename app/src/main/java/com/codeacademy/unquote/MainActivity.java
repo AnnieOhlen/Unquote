@@ -1,7 +1,6 @@
 package com.codeacademy.unquote;
 
 import java.util.ArrayList;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -9,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.ArrayList;
+
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MainActivity extends AppCompatActivity {
     int currentQuestionIndex;
@@ -30,11 +31,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.ic_unquote_icon);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setElevation(0);
-
+        MaterialToolbar toolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(toolbar);
         setContentView(R.layout.activity_main);
 
         questionImageView = findViewById(R.id.iv_main_question_image);
@@ -140,11 +138,11 @@ public class MainActivity extends AppCompatActivity {
         questions.remove(current);
         displayQuestionsRemaining(questions.size());
 
-        if (questions.size() == 0) {
+        if (questions.isEmpty()) {
             String gameOverMessage = getGameOverMessage(totalCorrect, totalQuestions);
 
-            AlertDialog.Builder gameOverDialogBuilder = new
-                    AlertDialog.Builder(MainActivity.this);
+            MaterialAlertDialogBuilder gameOverDialogBuilder = new
+                    MaterialAlertDialogBuilder(MainActivity.this);
             gameOverDialogBuilder.setCancelable(false);
 
             gameOverDialogBuilder.setTitle(gameOverMessage);
