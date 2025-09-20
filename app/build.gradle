@@ -3,7 +3,7 @@ plugins {
 }
 android {
     namespace 'com.codeacademy.unquote'
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.codeacademy.unquote"
