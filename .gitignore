@@ -21,3 +21,9 @@ captures
 
 # Logs
 *.log
+
+# Android Studio / IDE config
+*.avd/
+.idea/deviceManager.xml
+.idea/appInsightsSettings.xml
+.idea/deploymentTargetSelector.xml
